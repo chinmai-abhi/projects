@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Enter your lucky no</h1>
+    <input type="number" id="number" />
+    <button type="button" id="click">click</button>
+    <h1 id="Result">Result</h1>
+  </body>
+  <script>
+    const number = document.getElementById("number");
+    const click = document.getElementById("click");
+    const Result = document.getElementById("Result");
+    click.addEventListener("click", () => {
+      const computer_lucky_no = Math.floor(Math.random() * 10);
+      console.log(computer_lucky_no);
+      if (number.value==computer_lucky_no){
+        Result.textContent="you won the game"
+      }
+      else{
+        Result.textContent=`you loose the game and computer lucky no is ${computer_lucky_no} `
+      }
+    });
+  </script>
+</html>
