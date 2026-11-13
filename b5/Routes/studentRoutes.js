@@ -1,0 +1,12 @@
+const express=require("express")
+const {students, create_student, create_students, studento, studentu, studentById, updateo, updatem}=require("../controllers/studentController.js")
+const Router=express.Router()
+Router.get("/students",students)
+Router.post("/create_student",create_student)
+Router.post("/create_students",create_students)
+Router.get("/studento",studento)
+Router.get("/studentu",studentu)
+Router.get("/student/:id",studentById)
+Router.put("/updateo",updateo)
+Router.put("/updatem",updatem)
+module.exports={Router}
