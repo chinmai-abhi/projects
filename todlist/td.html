@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>To Do list</h1>
+    <input id="i" type="text"/>
+    <button id="add">Add</button>
+    <div id="lists"></div>
+</body>
+<script>
+    const i=document.getElementById("i")
+    const add=document.getElementById("add")
+    const lists=document.getElementById("lists")
+    add.addEventListener("click",()=>{
+        const p=document.createElement("p")
+        p.textContent=i.value
+        p.addEventListener("click",()=>{
+            if (p.style.textDecoration==="line-through"){
+                p.style.textDecoration="none"
+            }
+            else{
+                p.style.textDecoration="line-through"
+            }
+        })
+        const b=document.createElement("button")
+        b.textContent="delete"
+        b.style.color="red"
+        b.addEventListener("click",()=>{
+            p.remove()
+        })
+        p.appendChild(b)
+        lists.appendChild(p)
+        i.value=""     
+    })
+
+</script>
+</html>
